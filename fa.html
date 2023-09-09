@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My project</title>
+        <link rel="stylesheet" href="fa.css">
+    </head>
+    <body>
+<header>
+    <h1 data-testid="page-title">My Slack Profile</h1>
+</header>
+<div id="container">
+    
+    <img id="slack-display-image" src="https://ca.slack-edge.com/T05FFAA91JP-U05RFAZBV44-cc7e90bc8911-512" alt="Chiamaka Faith" data-testid="slackDisplayImage" width="200">
+    <p id="slack-username" data-testid="slackUserName">Chiamaka Faith Nwokolo</p>
+    <p id="my-track" data-testid="myTrack">Frontend</p>
+    <p id="current-day" data-testid="currentDayOfTheWeek"></p>
+    <p id="current-utc-time" data-testid="currentUTCTime"></p>
+    <p id="github-url" data-testid="githubURL">
+        <a href="http://127.0.0.1:5500/fa.html" target="_blank">GitHub Repository</a>
+    </p>
+</div> 
+
+<script>
+    // Function to update the current day of the week
+    function updateCurrentDay() {
+        const currentDayElement = document.getElementById('current-day');
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const today = new Date();
+        const currentDay = daysOfWeek[today.getDay()];
+        currentDayElement.textContent = `Current Day: ${currentDay}`;
+    }
+
+    function updateCurrentUTCTime() {
+            const currentUTCTimeElement = document.getElementById('current-utc-time');
+            const currentTime = new Date().getTime();
+            currentUTCTimeElement.textContent = `Current UTC Time (Milliseconds): ${currentTime}`;
+        }updateCurrentDay();
+        updateCurrentUTCTime();
+    </script>
+
+</body>
+</html>
